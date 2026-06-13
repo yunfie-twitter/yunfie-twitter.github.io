@@ -1,0 +1,40 @@
+---
+import PageLayout from "../components/PageLayout.astro";
+import { withBase } from "../utils/paths";
+
+const description =
+  "お探しのページは見つかりませんでした。ゆんふぃ公式ホームページのトップへ戻るための404ページです。";
+---
+
+<PageLayout
+  title="404 | Page Not Found | yunfie"
+  description={description}
+  robots="noindex, follow"
+  homeHref="/"
+>
+  <main class="not-found-page" aria-labelledby="not-found-title">
+    <section class="not-found-hero">
+      <div class="not-found-stage" aria-hidden="true">
+        <span class="not-found-tape not-found-tape-top">PAGE SIGNAL LOST</span>
+        <span class="not-found-tape not-found-tape-bottom">RETURN TO INDEX</span>
+        <div class="not-found-number">
+          <span>4</span>
+          <span>0</span>
+          <span>4</span>
+        </div>
+      </div>
+
+      <div class="not-found-copy">
+        <p class="hero-kicker">HTTP STATUS / LOST PAGE</p>
+        <h1 id="not-found-title">ページが見つかりません</h1>
+        <p>
+          URLが変わったか、ページがまだ準備中みたいです。トップページからもう一度探してみてください。
+        </p>
+        <div class="not-found-actions" aria-label="404ページの操作">
+          <a class="button" href={withBase("/")}>TOPへ戻る</a>
+          <a class="button button-ghost" href={withBase("/blog/")}>Blogを見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>
