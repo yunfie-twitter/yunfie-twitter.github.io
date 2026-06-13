@@ -1,0 +1,587 @@
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  min-height: 100svh;
+  padding: clamp(118px, 17vh, 172px) clamp(22px, 6vw, 84px) clamp(76px, 11vh, 120px);
+  display: grid;
+  align-items: end;
+  text-align: left;
+  color: var(--black);
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  background-size: clamp(54px, 7vw, 96px) 100%, auto;
+  border-bottom: 1px solid var(--black);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: clamp(22px, 6vw, 84px);
+  right: clamp(22px, 6vw, 84px);
+  top: clamp(98px, 14vh, 132px);
+  height: 1px;
+  background: var(--line);
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(22px, 6vw, 84px);
+  bottom: clamp(28px, 4vh, 44px);
+  width: min(28vw, 360px);
+  height: 1px;
+  background: var(--black);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  width: min(1120px, 100%);
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  display: grid;
+  justify-items: start;
+  align-self: end;
+  justify-self: start;
+  margin: 0;
+  text-align: left;
+}
+
+.hero-kicker {
+  margin: 0 0 clamp(14px, 2vw, 22px);
+  color: var(--muted);
+  font-family: var(--logo);
+  font-size: clamp(12px, 1.2vw, 14px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero-title {
+  max-width: 10ch;
+  margin: 0;
+  font-family: var(--logo);
+  font-size: clamp(78px, 17vw, 230px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hero-copy {
+  position: relative;
+  max-width: 640px;
+  margin: clamp(24px, 3.8vw, 44px) 0 0;
+  padding: 0;
+  color: var(--black);
+  font-family: var(--hero-font);
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  margin-top: clamp(28px, 4.6vw, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  background: var(--black);
+  border: 1px solid var(--black);
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.hero-btn-secondary {
+  border-color: var(--line);
+  box-shadow: none;
+  font-size: 13px;
+}
+
+.hero-btn-primary:hover,
+.hero-btn-secondary:hover {
+  box-shadow: none;
+}
+
+.hero-meta,
+.scroll-cue {
+  display: none;
+}
+
+.hero-noise,
+.hero-backdrop,
+.hero-deco,
+.hero-lines,
+.hero-card,
+.hero-avatar,
+.hero-card-body,
+.hero-card-tags {
+  display: none;
+}
+
+.hero-copy span,
+.hero-copy span + span,
+.hero-copy::before,
+.hero-copy::after {
+  all: unset;
+}
+
+.hero-card-name,
+.hero-card-sub {
+  color: var(--black);
+}
+
+.is-loaded .hero-content {
+  animation: heroContentIn 0.72s cubic-bezier(.2, .8, .2, 1) 0.16s forwards;
+}
+
+/* =========================
+   Button
+========================= */
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0;
+  overflow: hidden;
+  z-index: 1;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 5px 5px 0 var(--black);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: var(--white);
+  z-index: -1;
+  transition: width 0.32s cubic-bezier(.7, 0, .2, 1);
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.button:hover {
+  color: var(--black);
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+.button-ghost {
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 5px 5px 0 rgba(17, 17, 17, 0.24);
+}
+
+.button-ghost::before {
+  background: var(--black);
+}
+
+.button-ghost:hover {
+  color: var(--white);
+  box-shadow: 3px 3px 0 rgba(17, 17, 17, 0.24);
+}
+
+.blue-button {
+  margin-top: 28px;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* =========================
+   Sections
+========================= */
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px;
+  position: relative;
+  scroll-margin-top: 84px;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin: 0 0 22px;
+  background: var(--black);
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: var(--black);
+  text-align: left;
+  font-family: var(--display);
+  font-size: clamp(31px, 4.5vw, 52px);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.section h2::after {
+  content: none;
+}
+
+.section > p {
+  max-width: 780px;
+  margin: 0;
+  text-align: left;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.54s ease,
+    transform 0.54s cubic-bezier(.2, .8, .2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+#news::before {
+  margin-left: auto;
+}
+
+#news h2,
+#news > p {
+  margin-left: auto;
+  text-align: right;
+}
+
+#repository::before {
+  margin-left: auto;
+}
+
+#repository h2,
+#repository > p {
+  margin-left: auto;
+  text-align: right;
+}
+
+#about {
+  max-width: none;
+  padding-inline: 0;
+}
+
+#about::before {
+  display: none;
+}
+
+.about-panel {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+  border-block: 1px solid var(--black);
+  background: var(--white);
+}
+
+.about-heading {
+  position: relative;
+  min-height: 330px;
+  padding: 28px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-items: start;
+  background: var(--white);
+}
+
+.about-heading::after {
+  content: none;
+}
+
+.about-kicker {
+  width: max-content;
+  max-width: 100%;
+  padding: 7px 10px 6px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--logo);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-heading h2 {
+  margin: 24px 0 0;
+  font-size: clamp(42px, 8vw, 96px);
+  line-height: 0.9;
+}
+
+.about-icon {
+  width: clamp(136px, 16vw, 184px);
+  height: clamp(136px, 16vw, 184px);
+  align-self: end;
+  justify-self: end;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.about-copy {
+  padding: 34px 34px 32px 0;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  background: var(--white);
+}
+
+.about-copy p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.about-copy .about-lead {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 800;
+  line-height: 1.75;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-tags li {
+  padding: 8px 11px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--logo);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+/* =========================
+   Link Cards
+========================= */
+
+.link-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  counter-reset: linkCard;
+}
+
+.link-card {
+  --accent: var(--black);
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 38px;
+  grid-template-areas:
+    "mark name arrow"
+    "mark url arrow";
+  gap: 6px 16px;
+  align-items: center;
+  min-height: 112px;
+  padding: 22px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
+    linear-gradient(var(--white), var(--white));
+  color: var(--black);
+  text-decoration: none;
+  border: 1px solid var(--black);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.16);
+  z-index: 1;
+  counter-increment: linkCard;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.link-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+.link-card[href]::after {
+  content: "↗";
+  grid-area: arrow;
+  justify-self: end;
+  align-self: center;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.22);
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.link-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 4px 7px 0 rgba(17, 17, 17, 0.18);
+}
+
+.link-card[href]:hover::after {
+  background: var(--accent);
+  color: var(--white);
+  transform: translate(2px, -2px);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.link-mark {
+  grid-area: mark;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--black);
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.22);
+  transition:
+  transform 0.25s ease;
+}
+
+.link-mark img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.link-card:hover .link-mark {
+  transform: translateY(-2px);
+}
+
+.link-card[hidden] {
+  display: none;
+}
+
+.link-name {
+  grid-area: name;
+  display: block;
+  min-width: 0;
+  padding-right: 8px;
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0;
+  color: inherit;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.link-kind {
+  position: absolute;
+  left: 22px;
+  top: 10px;
+  width: fit-content;
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.link-url {
+  grid-area: url;
+  display: block;
+  min-width: 0;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+  opacity: 0.62;
+  word-break: break-all;
+}
+
+.link-url::before {
+  content: counter(linkCard, decimal-leading-zero);
+  margin-right: 10px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 10px;
+  opacity: 1;
+}
+
+.links-toggle {
+  display: block;
+  width: fit-content;
+  margin: 24px 0 0 auto;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
