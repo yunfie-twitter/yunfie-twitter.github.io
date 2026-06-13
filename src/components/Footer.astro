@@ -1,5 +1,11 @@
 ---
 import { withBase } from "../utils/paths";
+import { profileLinks, type ProfileLink } from "../data/links";
+
+const footerSocialNames = ["X", "Instagram", "misskey.io", "YouTube"];
+const footerSocialLinks = footerSocialNames
+  .map((name) => profileLinks.find((link) => link.name === name))
+  .filter((link): link is ProfileLink => Boolean(link));
 ---
 
 <footer class="footer">
@@ -18,6 +24,23 @@ import { withBase } from "../utils/paths";
       <a href={withBase("/#contact")}>CONTACT</a>
       <a href={withBase("/blog/")}>BLOG</a>
       <a href={withBase("/privacy-policy/")}>PRIVACY</a>
+    </nav>
+
+    <nav class="footer-social" aria-label="ソーシャルリンク">
+      {
+        footerSocialLinks.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer me"
+            aria-label={link.label}
+            style={`--accent: ${link.accent};`}
+          >
+            <img src={link.icon} alt="" loading="lazy" width="22" height="22" />
+            <span>{link.name === "misskey.io" ? "Misskey" : link.name}</span>
+          </a>
+        ))
+      }
     </nav>
 
     <div class="footer-bottom">

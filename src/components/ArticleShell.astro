@@ -3,43 +3,69 @@ type Props = {
   backHref: string;
   backLabel: string;
   date: string;
+  headings?: {
+    depth: number;
+    slug: string;
+    text: string;
+  }[];
   label: string;
   title: string;
   lead: string;
   thumbnail?: string;
 };
 
-const { backHref, backLabel, date, label, title, lead, thumbnail } = Astro.props;
+const { backHref, backLabel, date, headings = [], label, title, lead, thumbnail } = Astro.props;
+const tocHeadings = headings.filter((heading) => heading.depth >= 2 && heading.depth <= 3);
 ---
 
 <main class="article-page">
   <article class="article">
-    <div class="article-inner">
-      <header class="article-header">
-        <div class="article-meta">
-          <a class="article-back" href={backHref}>{backLabel}</a>
-          <time datetime={date}>{date.replaceAll("-", ".")}</time>
+    <div class="article-layout">
+      <div class="article-inner">
+        <header class="article-header">
+          <div class="article-meta">
+            <a class="article-back" href={backHref} aria-label={backLabel}>
+              <pixiv-icon name="16/Back" aria-hidden="true"></pixiv-icon>
+              <span class="sr-only">{backLabel}</span>
+            </a>
+            <time datetime={date}>{date.replaceAll("-", ".")}</time>
+          </div>
+
+          <p class="article-label">{label}</p>
+          <h1>{title}</h1>
+          {
+            thumbnail && (
+              <img
+                class="article-thumbnail"
+                src={thumbnail}
+                alt=""
+                loading="eager"
+                decoding="async"
+              />
+            )
+          }
+          <p class="article-lead">{lead}</p>
+        </header>
+
+        <div class="article-body">
+          <slot />
         </div>
-
-        <p class="article-label">{label}</p>
-        <h1>{title}</h1>
-        {
-          thumbnail && (
-            <img
-              class="article-thumbnail"
-              src={thumbnail}
-              alt=""
-              loading="eager"
-              decoding="async"
-            />
-          )
-        }
-        <p class="article-lead">{lead}</p>
-      </header>
-
-      <div class="article-body">
-        <slot />
       </div>
+
+      {
+        tocHeadings.length > 0 && (
+          <nav class="article-toc article-toc-sidebar" aria-label="目次">
+            <p class="article-toc-label">CONTENTS</p>
+            <ol>
+              {tocHeadings.map((heading) => (
+                <li class={`article-toc-depth-${heading.depth}`}>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
     </div>
   </article>
 </main>

@@ -1,5 +1,6 @@
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import "@charcoal-ui/icons";
 
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.getElementById("navMenu");
@@ -51,8 +52,63 @@ if (document.readyState === "complete") {
   window.addEventListener("load", finishLoading, { once: true });
 }
 
+// =========================
+// Scroll Reveal
+// =========================
+
+const revealSelectors = [
+  ".section",
+  ".about-panel",
+  ".news-card",
+  ".music-card",
+  ".repository-card",
+  ".link-card",
+  ".contact-panel",
+  ".blog-post",
+  ".article-inner"
+].join(",");
+
+const isArticlePage = Boolean(document.querySelector(".article-page"));
+const revealElements = isArticlePage
+  ? []
+  : Array.from(document.querySelectorAll(revealSelectors)).filter(
+      (element) => !element.closest(".hero") && !element.closest(".loader")
+    );
+
+revealElements.forEach((element, index) => {
+  element.classList.add("reveal-on-scroll");
+  element.style.setProperty("--reveal-delay", `${(index % 5) * 42}ms`);
+});
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealElements.forEach((element) => {
+    element.classList.add("is-revealed");
+    element.style.removeProperty("--reveal-delay");
+  });
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-revealed");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "0px 0px -12%",
+      threshold: 0.12
+    }
+  );
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+}
+
 const setMenuOpen = (isOpen) => {
   navMenu?.classList.toggle("active", isOpen);
+  document.body.classList.toggle("is-menu-open", isOpen);
 
   if (menuButton) {
     menuButton.classList.toggle("is-open", isOpen);
@@ -62,8 +118,37 @@ const setMenuOpen = (isOpen) => {
 };
 
 menuButton?.addEventListener("click", () => {
-  navMenu?.classList.toggle("active");
-  setMenuOpen(navMenu?.classList.contains("active") ?? false);
+  setMenuOpen(!(navMenu?.classList.contains("active") ?? false));
+});
+
+document.addEventListener("click", (event) => {
+  if (!navMenu?.classList.contains("active")) {
+    return;
+  }
+
+  const target = event.target;
+
+  if (!(target instanceof Node)) {
+    return;
+  }
+
+  if (navMenu.contains(target) || menuButton?.contains(target)) {
+    return;
+  }
+
+  setMenuOpen(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenuOpen(false);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 901px)").matches) {
+    setMenuOpen(false);
+  }
 });
 
 const updateTopButton = () => {

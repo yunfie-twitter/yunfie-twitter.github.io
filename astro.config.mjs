@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import inline from "@playform/inline";
 import compress from "@playform/compress";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 
 const lazyLoadMarkdownImages = () => {
   return (tree) => {
@@ -79,7 +81,8 @@ export default defineConfig({
 
   markdown: {
     processor: unified({
-      rehypePlugins: [lazyLoadMarkdownImages],
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex, lazyLoadMarkdownImages],
     }),
   },
 

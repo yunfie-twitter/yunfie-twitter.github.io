@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
 };
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 ---
 
 <PageLayout title={`${post.data.title} | yunfie`} description={post.data.description} homeHref="/">
@@ -23,6 +23,7 @@ const { Content } = await render(post);
     backHref={withBase("/blog/")}
     backLabel="BLOG"
     date={post.data.date}
+    headings={headings}
     label="Migration Note"
     title={post.data.title}
     lead={post.data.description}
