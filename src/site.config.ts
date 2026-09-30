@@ -50,30 +50,30 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  // サイト基本URL（デプロイ先URLに合わせて変更してください）
-  siteUrl: "https://example.com",
-  siteName: "My Portfolio",
-  title: "My Portfolio | Official Website",
+  siteUrl: "https://yunfie-twitter.github.io",
+  siteName: "ゆんふぃ Official Website",
+  title: "ゆんふぃ | Official Website",
   description:
-    "Web・ソフトウェア・デザインなどの制作物やブログ記事をまとめたポートフォリオサイトです。",
-  author: "Your Name",
-  handle: "@username",
-  avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=portfolio",
+    "ゆんふぃの公式ホームページです。YouTube、GitHub、Ko-fi、note、X、Instagram、Misskeyなどの活動リンクをまとめています。",
+  author: "ゆんふぃ",
+  handle: "@yunfie",
+  avatar:
+    "https://proxy.pjsekai.world/image.webp?url=https://yt3.googleusercontent.com/sLRN8C_Bqv9bSaBZ-dX61Wlkjj6Zl92_EBfPNrSQA7XVU0_YuLOaZA-vF2P-1X1d6tcSplJtCA=s900-c-k-c0x00ffffff-no-rj",
   locale: "ja_JP",
 
   // OGP & Twitter
   ogImage: "/ogp.png",
-  twitterHandle: "@username",
+  twitterHandle: "@yunfie_misskey",
 
-  // Google Analytics & Search Console (利用しない場合は空文字のままでOK)
-  googleAnalyticsId: "", // 例: "G-XXXXXXXXXX"
-  googleSiteVerification: "", // 例: "your-verification-code"
+  // Google Analytics & Search Console
+  googleAnalyticsId: "G-678KKVFQ92",
+  googleSiteVerification: "wnK_rnN5ZT49WvbmE-s4ZxSTiqJdGH_cXmg1y8Q0Iuc",
 
   // ヒーローセクション
   hero: {
     kicker: "Official Website",
-    title: "@username",
-    copy: "調べて、作って、公開する。日々の制作や思考の断片を、静かに置いていく場所。",
+    title: "@yunfie",
+    copy: "調べて、作って、公開する。Web・音楽・ソフトウェアの断片を、静かに置いていく場所。",
     primaryBtnText: "About",
     primaryBtnHref: "#about",
     secondaryBtnText: "Links",
@@ -84,20 +84,20 @@ export const siteConfig: SiteConfig = {
   about: {
     kicker: "Personal Creator",
     title: "ABOUT",
-    lead: "はじめまして、Your Nameです。Web制作やソフトウェア開発、デザインなど気になったテーマを探求・制作しています。",
-    bio: "このサイトは、各種SNSや投稿先、制作実績、ブログ記事をまとめておくためのポートフォリオです。興味の向くままに制作・発信を続けています。",
-    tags: ["Web", "Software", "Design"]
+    lead: "ゆんふぃです。Web・音楽・ソフトウェアなど、気になったことを調べたり、作ったものを公開したりしています。",
+    bio: "このサイトは、SNSや投稿先、制作物、更新情報をまとめておくための場所です。興味の向くままに調べて、作って、試しながら、日々のアウトプットを少しずつ残しています。",
+    tags: ["Web", "Music", "Software"]
   },
 
   // コンタクトセクション
   contact: {
-    email: "hello@example.com",
-    description: "お問い合わせやご連絡は、こちらのメールフォームまたは上記アドレスからお気軽にどうぞ。"
+    email: "yunfie168@proton.me",
+    description: "お問い合わせやご連絡は、こちらのメールフォームからお願いします。"
   },
 
   // フッター
   footer: {
-    tagline: "Personal archive of web, notes, and tiny experiments.",
+    tagline: "Official archive of web, music, notes, and tiny experiments.",
     copyrightYear: 2026
   }
 };

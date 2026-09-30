@@ -8,19 +8,19 @@ export type RepositoryLink = {
 
 export const repositories: RepositoryLink[] = [
   {
-    name: "portfolio-template",
-    url: "https://github.com/username/portfolio-template",
-    label: "username/portfolio-templateを開く",
-    displayUrl: "github.com/username/portfolio-template",
+    name: "pixivfe-Fork",
+    url: "https://github.com/yunfie-twitter/pixivfe-Fork",
+    label: "yunfie-twitter/pixivfe-Forkを開く",
+    displayUrl: "github.com/yunfie-twitter/pixivfe-Fork",
     image:
-      "https://opengraph.githubassets.com/1/username/portfolio-template"
+      "https://opengraph.githubassets.com/e63b8a2f4236c10e5a2f1ae3c8c038da83b3b845bbb2f89e65808f820c84e0ba/yunfie-twitter/pixivfe-Fork"
   },
   {
-    name: "awesome-project",
-    url: "https://github.com/username/awesome-project",
-    label: "username/awesome-projectを開く",
-    displayUrl: "github.com/username/awesome-project",
+    name: "inverview-server",
+    url: "https://github.com/yunfie-twitter/inverview-server.git",
+    label: "yunfie-twitter/inverview-serverを開く",
+    displayUrl: "github.com/yunfie-twitter/inverview-server.git",
     image:
-      "https://opengraph.githubassets.com/1/username/awesome-project"
+      "https://opengraph.githubassets.com/f1f65fb714b2d8f5534b0385b725b2caf0d408082c5928b2cd9689a1c4e50432/yunfie-twitter/inverview-server"
   }
 ];

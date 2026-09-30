@@ -8,14 +8,16 @@ export type Track = {
 
 export const tracks: Track[] = [
   {
-    title: "Sample Track 01",
-    youtubeId: "dQw4w9WgXcQ",
-    date: "2026.01.01",
+    title: "Amanita Frow",
+    youtubeId: "VvmDvLsaBnE",
+    date: "2025.12.02",
+    thumbnail: "https://i.ytimg.com/vi/VvmDvLsaBnE/maxresdefault.jpg",
   },
   {
-    title: "Sample Track 02",
-    youtubeId: "dQw4w9WgXcQ",
-    date: "2026.01.15",
+    title: "紅の決意",
+    youtubeId: "UjXFJPhSj-o",
+    date: "2025.11.25",
+    thumbnail: "https://cf.mora.jp/contents/package/0000/00000101/0042/455/797/0042455797.200.jpg",
   },
 ];
 
