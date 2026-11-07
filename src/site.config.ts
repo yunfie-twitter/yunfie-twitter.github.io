@@ -58,7 +58,7 @@ export const siteConfig: SiteConfig = {
   author: "ゆんふぃ",
   handle: "@yunfie",
   avatar:
-    "https://proxy.pjsekai.world/image.webp?url=https://yt3.googleusercontent.com/sLRN8C_Bqv9bSaBZ-dX61Wlkjj6Zl92_EBfPNrSQA7XVU0_YuLOaZA-vF2P-1X1d6tcSplJtCA=s900-c-k-c0x00ffffff-no-rj",
+    "https://media.yunfi.f5.si/image.webp?url=https://yt3.googleusercontent.com/sLRN8C_Bqv9bSaBZ-dX61Wlkjj6Zl92_EBfPNrSQA7XVU0_YuLOaZA-vF2P-1X1d6tcSplJtCA=s900-c-k-c0x00ffffff-no-rj",
   locale: "ja_JP",
 
   // OGP & Twitter
