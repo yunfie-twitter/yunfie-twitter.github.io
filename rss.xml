@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ゆんふぃ Official Website Blog</title>
+        <link>https://yunfie.date</link>
+        <description>ゆんふぃ Official Websiteのブログ更新情報です。</description>
+        <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <copyright>© 2026 ゆんふぃ</copyright>
+        <atom:link href="https://yunfie.date/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[プライバシーポリシー]]></title>
+            <link>https://yunfie.date/posts/searxng-privacy-policy/</link>
+            <guid>https://yunfie.date/posts/searxng-privacy-policy/</guid>
+            <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[本プライバシーポリシーは、運営者が提供する以下のサービスにおける利用者情報の取り扱いについて定めるものです。]]></description>
+        </item>
+        <item>
+            <title><![CDATA[非公式Pixivクライアントの保存・検索・ブックマーク機能を整えた話]]></title>
+            <link>https://yunfie.date/posts/palleria-development-blog/</link>
+            <guid>https://yunfie.date/posts/palleria-development-blog/</guid>
+            <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[PalleriaをPixivクライアントとして整える中で、保存フロー、検索、ブックマーク、ミュート、アカウント管理をどう組み立てたかをまとめます。Pixivアプリ開発の実装メモとしても読める内容です。]]></description>
+        </item>
+        <item>
+            <title><![CDATA[静的ホームページをAstroへ移行した理由と手順]]></title>
+            <link>https://yunfie.date/posts/astro-migration/</link>
+            <guid>https://yunfie.date/posts/astro-migration/</guid>
+            <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[HTML/CSS/JavaScriptで作った静的ホームページをAstroへ移行した理由、ReactやNuxt.jsを使わなかった理由、Markdownブログ化の流れをまとめます。]]></description>
+        </item>
+    </channel>
+</rss>
