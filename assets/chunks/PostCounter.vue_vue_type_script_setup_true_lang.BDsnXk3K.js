@@ -1,0 +1,1 @@
+import{d as s}from"./theme.B5MRVGsS.js";import{d as a,o as n,c as l,t as p,E as c}from"./framework.kvohTzd7.js";const g=a({__name:"PostCounter",props:["tag"],setup(r){const e=r;let t;return typeof e.tag=="string"?t=s.filter(o=>o.frontmatter.tags.toString().replaceAll(" ","").toLowerCase().includes(e.tag)):t=s,(o,i)=>(n(),l("span",null,p(c(t).length),1))}});export{g as _};
