@@ -316,4 +316,57 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
     max-height: 480px;
   }
 }
+
+/* Home refinement: solid ink, framed portrait, tighter measure */
+
+.name {
+  max-width: 14ch;
+  color: var(--vp-c-text-1);
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.name::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 20px;
+  background: var(--vp-c-brand-1, var(--vp-c-brand));
+}
+
+.clip {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+}
+
+.text {
+  max-width: 20ch;
+  color: var(--vp-c-text-1);
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-top: 8px;
+}
+
+.tagline {
+  max-width: 40ch;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.8;
+  padding-top: 16px;
+}
+
+.image-bg {
+  display: none;
+}
+
+:deep(.image-src) {
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  max-width: 360px;
+  max-height: 360px;
+}
 </style>

@@ -7,6 +7,7 @@ import PostHeader from '../components/PostHeader.vue'
 import CookieConsent from '../components/CookieConsent.vue'
 import ExternalLinkModal from '../components/ExternalLinkModal.vue'
 import './style.css'
+import './home.css'
 
 declare global {
   interface Window {
