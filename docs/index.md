@@ -2,9 +2,7 @@
 layout: home
 title: Home
 hero:
-  name: "ゆんふぃ"
-  text: "調べて、作って、公開する。"
-  tagline: "Web・音楽・ソフトウェアの断片を、静かに置いていく場所。"
+  name: "ゆんふぃのブログ"
   actions:
     - theme: brand
       text: Blog

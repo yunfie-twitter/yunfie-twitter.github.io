@@ -369,4 +369,20 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   max-width: 360px;
   max-height: 360px;
 }
+
+@media (min-width: 960px) {
+  .container {
+    align-items: center;
+    min-height: 300px;
+  }
+
+  .image-container {
+    transform: none;
+  }
+
+  :deep(.image-src) {
+    max-width: 280px;
+    max-height: 280px;
+  }
+}
 </style>
