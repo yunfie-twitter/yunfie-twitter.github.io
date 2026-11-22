@@ -4,12 +4,19 @@
         <title>ゆんふぃ Official Website Blog</title>
         <link>https://yunfie.date</link>
         <description>ゆんふぃ Official Websiteのブログ更新情報です。</description>
-        <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 22 Nov 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
         <copyright>© 2026 ゆんふぃ</copyright>
         <atom:link href="https://yunfie.date/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[【実機レビュー】POCO M7 Pro 5GにカスタムROM「Halcyon」を導入！HyperOS 3・GSIとの違いと導入手順]]></title>
+            <link>https://yunfie.date/posts/poco-m7-pro-5g-halcyon-custom-rom-review/</link>
+            <guid>https://yunfie.date/posts/poco-m7-pro-5g-halcyon-custom-rom-review/</guid>
+            <pubDate>Sun, 22 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[POCO M7 Pro 5G（beryl）にカスタムROM「Halcyon」を導入した実機レビュー。純正HyperOS 3やGSIとの体感差、通知バグや通話・指紋認証の解消、導入時の注意点をまとめています。]]></description>
+        </item>
         <item>
             <title><![CDATA[プライバシーポリシー]]></title>
             <link>https://yunfie.date/posts/searxng-privacy-policy/</link>
